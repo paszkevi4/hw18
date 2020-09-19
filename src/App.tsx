@@ -1,26 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Provider } from 'react-redux';
+import store from './store/store';
+import { HashRouter, Switch, Route, Redirect } from 'react-router-dom';
+
+// Components
+import Sidebar from './components/Sidebar/Sidebar';
+import Main from './components/Main/Main';
+import Contacts from './components/Contacts/Contacs';
+import Photos from './components/Photos/Photos';
+import Posts from './components/Posts/Post';
+
+// Styles
 import './App.css';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <HashRouter>
+      <Provider store={store}>
+        <Switch>
+          <div className="app">
+            <Sidebar />
+            <Route path="/main" render={() => <Main />} />
+            <Route path="/contacts" render={() => <Contacts />} />
+            <Route path="/photos" render={() => <Photos />} />
+            <Route path="/posts" render={() => <Posts />} />
+            <Route path="*" render={() => <Redirect to="/main" />} />
+          </div>
+        </Switch>
+      </Provider>
+    </HashRouter>
   );
-}
+};
 
 export default App;
