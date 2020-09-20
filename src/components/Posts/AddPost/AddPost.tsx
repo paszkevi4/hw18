@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './addpost.css';
 
-const AddPost = (props) => {
+const AddPost: React.FC<any> = (props) => {
   let [user, setUser] = useState(0);
   let [text, setText] = useState('');
   let [image, setImageUrl] = useState('');
