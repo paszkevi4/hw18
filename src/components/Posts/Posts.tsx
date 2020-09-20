@@ -16,6 +16,7 @@ const Posts: React.FC<any> = ({ posts, users }) => {
       {posts.map((post: PostType, i: number) => {
         return (
           <Post
+            key={i}
             index={i}
             name={users[post.author].name}
             avatar={users[post.author].avatar}

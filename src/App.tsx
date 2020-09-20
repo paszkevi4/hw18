@@ -6,7 +6,7 @@ import { HashRouter, Switch, Route, Redirect } from 'react-router-dom';
 // Components
 import Sidebar from './components/Sidebar/Sidebar';
 import Main from './components/Main/Main';
-import Contacts from './components/Contacts/Contacs';
+import Contacts from './components/Contacts/ContactsContainer';
 import Photos from './components/Photos/Photos';
 import Posts from './components/Posts/PostsContainer';
 
@@ -17,16 +17,16 @@ const App: React.FC = () => {
   return (
     <HashRouter>
       <Provider store={store}>
-        <Switch>
-          <div className="app">
-            <Sidebar />
+        <div className="app">
+          <Sidebar />
+          <Switch>
             <Route path="/main" render={() => <Main />} />
             <Route path="/contacts" render={() => <Contacts />} />
             <Route path="/photos" render={() => <Photos />} />
             <Route path="/posts" render={() => <Posts />} />
             <Route path="*" render={() => <Redirect to="/main" />} />
-          </div>
-        </Switch>
+          </Switch>
+        </div>
       </Provider>
     </HashRouter>
   );

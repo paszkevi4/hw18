@@ -35,7 +35,7 @@ const AddPost: React.FC<any> = (props) => {
   return (
     <div className="addpost_container">
       <div onClick={changeUser} className="addpost_avatar">
-        <img src={props.users[user].avatar} />
+        <img src={props.users[user].avatar} alt="avatar" />
         <span>swap user</span>
       </div>
       <textarea
