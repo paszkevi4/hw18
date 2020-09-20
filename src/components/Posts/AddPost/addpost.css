@@ -7,6 +7,7 @@
   grid-template-columns: 100px 100px 100px 100px 100px;
   box-shadow: 10px 10px 20px -5px rgba(0, 0, 0, 0.25);
   margin: 20px;
+  margin-top: 75px;
 }
 .addpost_avatar {
   grid-column: 1/2;
