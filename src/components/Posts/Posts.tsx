@@ -1,10 +1,17 @@
 import React from 'react';
-import Post from './Post/Post';
+//@ts-ignore
+import Post from './Post/Post.tsx';
+import { PostType } from '../../store/postsReducer';
 
-const Posts = ({ posts, users }) => {
+type PropsType = {
+  posts: PostType;
+  users: any;
+};
+
+const Posts: React.FC<any> = ({ posts, users }) => {
   return (
     <div className="posts_column">
-      {posts.map((post, i) => {
+      {posts.map((post: PostType, i: number) => {
         return (
           <Post
             index={i}

@@ -8,7 +8,7 @@ import Sidebar from './components/Sidebar/Sidebar';
 import Main from './components/Main/Main';
 import Contacts from './components/Contacts/Contacs';
 import Photos from './components/Photos/Photos';
-import Posts from './components/Posts/Post';
+import Posts from './components/Posts/PostsContainer';
 
 // Styles
 import './App.css';

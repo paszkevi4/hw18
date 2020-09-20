@@ -3,13 +3,13 @@ import { createStore, combineReducers } from 'redux';
 import postsReducer from './postsReducer';
 import usersReducer from './usersReducer';
 
-let reducers = combineReducers({
+let rootReducer = combineReducers({
   posts: postsReducer,
   users: usersReducer,
 });
 
-let store = createStore(reducers);
+export type RootReducerType = ReturnType<typeof rootReducer>;
 
-window.store = store;
+let store = createStore(rootReducer);
 
 export default store;

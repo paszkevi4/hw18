@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { likePostPostAC, repostPostAC } from '../../../store/postsReducer';
 import './post.css';
 import { Favorite, Chat, Share } from '@material-ui/icons';
 
-const Post = ({
+const Post: React.FC<any> = ({
   index,
   name,
   avatar,
@@ -19,7 +19,6 @@ const Post = ({
   reposts,
   ...props
 }) => {
-  //const [liked, setLiked] = useState(props.liked);
   return (
     <div className="post_container">
       <div className="post_header">
@@ -65,15 +64,15 @@ const Post = ({
   );
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    likePost: (index, liked) => {
-      dispatch(likePostPostAC(index, liked));
-    },
-    repost: (index, reposted) => {
-      dispatch(repostPostAC(index, reposted));
-    },
-  };
-};
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     likePost: (index, liked) => {
+//       dispatch(likePostPostAC(index, liked));
+//     },
+//     repost: (index, reposted) => {
+//       dispatch(repostPostAC(index, reposted));
+//     },
+//   };
+// };
 
-export default connect(null, mapDispatchToProps)(Post);
+export default connect(null, { likePost: likePostPostAC, repost: repostPostAC })(Post);

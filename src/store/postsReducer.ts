@@ -2,7 +2,7 @@ const CREATE_NEW_POST = 'CREATE_NEW_POST';
 const LIKE_POST = 'LIKE_POST';
 const REPOST = 'REPOST';
 
-type PostType = {
+export type PostType = {
   author: number;
   publicationDate: Date | string;
   text: string;
@@ -14,7 +14,7 @@ type PostType = {
   reposted: boolean;
 };
 
-type createPostACType = {
+export type createPostACType = {
   type: typeof CREATE_NEW_POST;
   post: PostType;
 };
