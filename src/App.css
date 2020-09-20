@@ -9,6 +9,8 @@
 }
 
 .sidebar {
+  position: sticky;
+  top: 0;
   grid-column: 1/2;
   height: 100vh;
   background: yellowgreen;
@@ -21,4 +23,9 @@
   font-size: 20px;
   color: #fff;
   text-decoration: none;
+}
+
+.posts_column {
+  display: flex;
+  flex-direction: column-reverse;
 }

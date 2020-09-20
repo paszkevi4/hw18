@@ -22,7 +22,7 @@ const Post: React.FC<any> = ({
   return (
     <div className="post_container">
       <div className="post_header">
-        <img className="post_header__avatar" src={avatar} />
+        <img className="post_header__avatar" src={avatar} alt="user_avatar" />
         <div className="post_header__name">
           <div>
             {name}
@@ -35,7 +35,7 @@ const Post: React.FC<any> = ({
       </div>
       <div className="post_body">
         {content}
-        {image && <img src={image} alt={image} />}
+        {image && <img src={image} alt="post_image" />}
       </div>
 
       <div className="post_footer">

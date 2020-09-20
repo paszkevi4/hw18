@@ -1,4 +1,6 @@
 import React from 'react';
+
+import AddPost from './AddPost/AddPostContainer';
 //@ts-ignore
 import Post from './Post/Post.tsx';
 import { PostType } from '../../store/postsReducer';
@@ -29,6 +31,7 @@ const Posts: React.FC<any> = ({ posts, users }) => {
           />
         );
       })}
+      <AddPost />
     </div>
   );
 };
